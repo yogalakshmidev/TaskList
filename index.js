@@ -32,7 +32,7 @@ promise
   .then(()=>{
     console.log('I will execute too!');
   })
-  .catch((errormsg)=>{
+  .catch((errormsg)=>{1
     console.log(errormsg)
   })
 
