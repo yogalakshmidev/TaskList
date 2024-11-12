@@ -1,1 +1,1 @@
-seperate repository for the task
+Newspaper content fetched using api (DOM js)

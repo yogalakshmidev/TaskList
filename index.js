@@ -1,38 +1,55 @@
-console.log("Hello javascript");
-const promise= new Promise((resolve,reject)=>{
-  setTimeout(()=>{
-  // fetch data
-  // do something with the data
-  let data=10;
-  let successFactor=false;
-  // take decision whether the operation is success or not
-  if(successFactor){
-    resolve(data);
+const apikey='pub_5897707795887ae345895a404e763e85c2cf0';
+const blogContainer=document.getElementById("blog-container");
 
+async function fetchRandomNews(){
+  try{
+    const apiUrl=`https://newsdata.io/api/1/latest?apikey=${apikey}&category=politics&country=bd`;
+    const response = await fetch(apiUrl);
+    const data=await response.json();
+    console.log(data);
+    return data.articles;
   }
-  else{
-    reject("Network error in the operation");
+  catch(error){
+    console.log("Error fetching random news"+error);
+    return [];
   }
-    },3000);
-});
+}
+function displayBlogs(articles) {
+  blogContainer.innerHTML = "";
+  
+  // articles.forEach((article) => {
+    // need to create new element and used to display data
+      const blogCard = document.createElement("div");
+      blogCard.classList.add("blog-card");
+      const img = document.createElement("img");
+      img.src = articles.image_url;
+      img.alt = articles.title;
+      const title = document.createElement("h2");
+      title.textContent = articles.title;
+      const description = document.createElement("p");
+      description.textContent = articles.description;
 
-promise
-  .then((data)=>{
-    console.log('operation completed');
-    console.log('data received : ',data);
-  })
-  .catch((error)=>{
-    console.log('operation failed');
-    console.log('error : ',error);
-  })
-  .then(()=>{
-    console.log('I will execute no matter success or failure');
-    throw new Error('something unexpected happened');
-  })
-  .then(()=>{
-    console.log('I will execute too!');
-  })
-  .catch((errormsg)=>{1
-    console.log(errormsg)
-  })
+      // Need to add this element to the blog
+      blogCard.appendChild(img);
+      blogCard.appendChild(title);
+      blogCard.appendChild(description);
 
+      blogContainer.appendChild(blogCard);
+      
+  // })
+}
+(async ()=>{
+  try{
+    const articles = fetchRandomNews();
+    console.log(articles);
+    // for(i=0;i<articles.length;i++){
+    //   console.log(articles[i].image_url);
+    //   console.log(articles[i].title);
+    //   console.log(articles[i].description);
+    // }
+    displayBlogs(articles);
+  }
+  catch(error){
+    console.error("Error fetching random newsss..."+error);
+  }
+})();
