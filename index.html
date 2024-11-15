@@ -3,9 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello world</title>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="index.css" class="href">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  
+  <div class="header">
+    Our Expense Tracker
+  </div>
+  <div class="main">
+    <div class="container">
+      <div class="topbar">
+        <p class="text">Your Current Balance is : </p>
+        <p class="amount_holder">
+          <span id="currency">$</span>
+          <span id="balance">500</span>
+        </p>
+      </div>
+      <div class="form">
+        <p>Add Transactions:</p>
+        <div class="form-control radio">
+          <label for="name">Name : </label>
+          <input type="text" name="name" id="name" placeholder="eg:My Salary">
+        </div>
+        <div class="form-control radio">
+          <label for="name">Type : </label>
+          <div class="radio">
+            <input type="radio" name="type" id="income"  checked>
+            <label for="radio">Income</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="type" id="expense">
+            <label for="radio">Expense</label>
+          </div>
+          
+        </div>
+        <div class="form-control radio">
+          <label for="amount">Amount: </label>
+          <input type="number" name="amount" id="amount" placeholder="eg: 400">
+         
+        </div>
+        <button class="btn" id="save">Save Transaction</button>
+        <button class="btn" id="cancel">Cancel Edit</button>
+      </div>
+      <p class="heading">Transaction List</p>
+      <ul id="list_of_transactions">
+        <li class="transaction income">
+          <p>Income 1</p>
+          <div class="right_side">
+            <p>$300</p>
+            <button><i class="fa-regular fa-pen-to-square"></i></button>
+            <button><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </li>
+         
+        <li class="transaction expense">
+          <p>Expense 1</p>
+          <div class="right_side">
+            <p>$100</p>
+            <button><i class="fa-regular fa-pen-to-square"></i></button>
+            <button><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    Made for Footer
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
