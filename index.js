@@ -103,7 +103,7 @@ else{
   tnxNameHolder.value="";
   tnxAmountHolder.value="";
   render();
-  cancelButton.style.display=none;
+  cancelButton.style.display="none";
 
 })
 
