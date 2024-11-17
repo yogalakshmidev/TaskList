@@ -1,141 +1,113 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.header,.footer{
+.header,
+.footer {
   background-color: #1a8072;
   color: white;
   text-align: center;
   padding: 20px;
-  
 }
-.header{
+.header {
   font-size: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
-.main{
-  flex-grow: 1;
+.main {
+  /* flex-grow: 1; */
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* height: 300px; */
 }
 
-.topbar{
-  background: #1a8072;
+.amountBalace {
+  background-color: #1a8072;
   color: white;
   padding: 20px;
-  min-width: 300px;
-}
-.text{
-  color: #eee;
-  font-size: 0.8rem;
-  margin-bottom: 2px;
-}
-
-
-#balance,#currency{
-  font-size: 2rem;
-}
-
-.form{
-  background-color: #ccc;
-  padding: 20px;
   display: flex;
-  flex-direction: column;
+  font-weight: 500;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.total {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
   gap: 10px;
 }
-
-.form p{
-  font-size: 1.4rem;
-  
+.formbg {
+  background-color: rgb(132, 224, 224);
+  padding: 20px;
 }
-input{
-  padding: 5px 10px;
-}
-label,input{
-  display: block;
-  
-
-}
-.form_control{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.radio1{
-  display: flex;
-}
-.radio{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-button{
-  outline: none;
+input {
   border: none;
-  background: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
 }
-.btn{
-  display: block;
-  width: 100%;
+
+.btnbgNone {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+.greenBtn {
+  padding: 10px;
   background-color: #1a8072;
   color: white;
-  font-size: 1.2rem;
-   cursor: pointer;
-   padding: 10px;
-   transition: background-color 0.3s ease;
-
+  border: none;
+  border-radius: 5px;
 }
-.btn:hover{
-  background-color: #095744;
+.btnActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
 }
-p.heading{
-  margin:10px 0;
-
+.amtTransDetails {
+  display: flex;
+  gap: 10px;
 }
-ul{
-  list-style: none;
-}
-.transaction{
+.transaction_list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  color: white;
-  margin: 5px 0;
-
+  border-radius: 5px;
 }
-.income{
-  background-color: #1a8072;
+.paraTrans {
+  margin: 20px 0;
 }
-.expense{
-  background-color: #e5415e;
+.income {
+  background-color: aquamarine;
+  padding: 16px;
 }
-.right_side{
-  display: flex;
-  gap: 5px;
+.expense {
+  background-color: rgb(210, 72, 72);
+  padding: 16px;
 }
-.right_side button{
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.right_side button:hover{
-  color: skyblue;
-  cursor: pointer;
-}
-
-#cancel{
-  background-color: #e5415e;
-  display: none;
-}
-#cancel:hover{
-  background-color: red;
-}
+/* Need to ask scrollbar behaviour */
+/* .transactionDesc{
+  height: 150px;
+  overscroll-behavior: auto;
+  scroll-behavior: smooth;
+  scroll-padding: 10px;
+  scroll-margin: 10px;
+} */
