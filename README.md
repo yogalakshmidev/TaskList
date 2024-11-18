@@ -1,1 +1,0 @@
-Newspaper content fetched using api (DOM js)
