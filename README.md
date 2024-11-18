@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 DESCRIPTION: 
 
 ---Income Expense Calculator design used to track the expenses and show their transactions
