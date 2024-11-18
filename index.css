@@ -28,19 +28,26 @@ body{
 }
 
 .topbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background: #1a8072;
   color: white;
   padding: 20px;
   min-width: 300px;
 }
+
 .text{
+  
   color: #eee;
   font-size: 0.8rem;
   margin-bottom: 2px;
+  margin-left: 15px;
 }
 
 
-#balance,#currency{
+#balance,#currency,#balanceTotalExpense,#balanceTotalIncome{
   font-size: 2rem;
 }
 
@@ -71,16 +78,22 @@ label,input{
 }
 .radio1{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  
 }
 .radio{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 button{
   outline: none;
   border: none;
   background: none;
+  margin: 0 10px;
 }
 .btn{
   display: block;
